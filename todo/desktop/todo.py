@@ -55,14 +55,21 @@ def display_todo(args=[]):
         if 'nice' in args:
             print '%s, id: %i, done: %s\n %s' % (item['title'], item['id'], item['done'], item['content'])
             print ""
-            continue 
-        elif 'dmenu' in args:
-            dmenu = True
-            args.remove('dmenu')
-        for x in args:
-            print item[x]
-        if not dmenu:
+        elif 'dmenu' in args or dmenu==True:
+            if not dmenu:
+                dmenu = True
+                args.remove('dmenu')
+                dstr = ""
+            for x in args:
+                dstr += item[x] + ": "
+            dstr = dstr[:-2]    
+            dstr += "\n"
+        else:
+            for x in args:
+                print item[x]
             print ""
+    if dmenu:
+        print dstr
 
 
 def handle_args(args):
