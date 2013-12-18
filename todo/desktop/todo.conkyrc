@@ -8,7 +8,7 @@ use_spacer none
 short_units yes
 text_buffer_size 2048
 background yes
-update_interval 5
+update_interval 3
 xftalpha 1
 total_run_times 0
 draw_shades no
@@ -18,8 +18,8 @@ own_window_color black
 own_window yes
 own_window_transparent yes
 own_window_type override
-minimum_size 200 200
-maximum_width 300
+minimum_size 10 400
+maximum_width 400
 double_buffer yes
 no_buffers yes
 gap_x 10
@@ -27,7 +27,7 @@ gap_y 30
 alignment bottom_right
 
 TEXT
-=======Todo List=============
-
-${texeci 10 python2.7 /home/chris/projects/crichon_clients/todo/desktop/todo.py -o /home/chris/projects/crichon_clients/todo/desktop/todo.list}
+=======Todo List==========================
+${texeci 5 python2.7 /home/chris/projects/crichon_clients/todo/desktop/todo.py -o /home/chris/projects/crichon_clients/todo/desktop/todo.list}
 ${exec cat /home/chris/projects/crichon_clients/todo/desktop/todo.list}
+

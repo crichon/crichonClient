@@ -39,7 +39,6 @@ def post(title, content):
 
 
 def get_todo():
-    #request = prepare_request(base_url + 'todo')
     response = requests.get(base_url + 'todo', auth=user)
     if response.status_code == 200 and response.headers['content-type'] == 'application/json':
        return response.json()
@@ -53,7 +52,8 @@ def display_todo(args=[]):
     dmenu = False
     for item in todos['todos']:
         if 'nice' in args:
-            print '%s, id: %i, done: %s\n %s' % (item['title'], item['id'], item['done'], item['content'])
+            print '%s, id: %i, done: %s\n %s' % (item['title'], item['id'],
+                    item['done'], item['content'].replace("\\n", "\n"))
             print ""
         elif 'dmenu' in args or dmenu==True:
             if not dmenu:
