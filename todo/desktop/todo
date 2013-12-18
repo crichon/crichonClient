@@ -1,0 +1,15 @@
+#!/bin/sh
+
+ACTION=$(echo -e "add\ndel\n"| dmenu -p "add | dell todo" )
+
+if [ "$ACTION" = "add" ]; then
+	title=`echo " " | dmenu -p "title: "`
+	content=`echo " " |dmenu -p "content"`
+
+	python2.7 ~/bin/todo.py -p $title "$content"
+elif [ "$ACTION" = "del" ]; then
+	python2.7 ~/bin/todo.py -f title dmenu|dmenu -l 100 |xargs echo 'python2.7 /home/chris/bin/todo.py -d'|`xargs`
+else
+	echo "Are you dumb ?"
+fi
+

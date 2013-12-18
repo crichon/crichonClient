@@ -1,0 +1,32 @@
+# Settings
+##############################################
+use_xft yes
+xftfont Terminus:size=8
+xftalpha 1
+override_utf8_locale yes
+use_spacer none
+short_units yes
+text_buffer_size 2048
+background yes
+update_interval 5
+xftalpha 1
+total_run_times 0
+draw_shades no
+default_bar_size 100 10
+default_color gray50
+own_window_color black
+own_window yes
+own_window_transparent yes
+own_window_type override
+minimum_size 200 200
+maximum_width 300
+double_buffer yes
+no_buffers yes
+gap_x 10
+gap_y 30
+alignment bottom_right
+
+TEXT
+
+${texeci 10 python2.7 /home/chris/projects/crichon_clients/todo/desktop/todo.py -o /home/chris/projects/crichon_clients/todo/desktop/todo.list -f title content done}
+${exec cat /home/chris/projects/crichon_clients/todo/desktop/todo.list}
