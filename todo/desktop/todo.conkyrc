@@ -27,6 +27,7 @@ gap_y 30
 alignment bottom_right
 
 TEXT
+=======Todo List=============
 
-${texeci 10 python2.7 /home/chris/projects/crichon_clients/todo/desktop/todo.py -o /home/chris/projects/crichon_clients/todo/desktop/todo.list -f title content done}
+${texeci 10 python2.7 /home/chris/projects/crichon_clients/todo/desktop/todo.py -o /home/chris/projects/crichon_clients/todo/desktop/todo.list}
 ${exec cat /home/chris/projects/crichon_clients/todo/desktop/todo.list}
